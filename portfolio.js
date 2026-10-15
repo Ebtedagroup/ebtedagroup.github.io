@@ -39,4 +39,18 @@
    },
 */
 window.PORTFOLIO = [
+ {
+  "slug": "hyperfab-gripper",
+  "cat": "ai",
+  "title_fa": "از یک عکس در گوشی تا قطعه‌ی واقعی",
+  "title_en": "From a photo on your phone to a real part",
+  "client_fa": "هایپرفب",
+  "client_en": "HyperFab",
+  "year": "1405",
+  "desc_fa": "کلیپ انیمیشنی برای خدمات پرینت سه‌بعدی هایپرفب: دانشجویی که مدل گریپرش را در اینترنت پیدا کرده، فقط با فرستادن یک لینک، قطعه‌ی واقعی را تحویل می‌گیرد.",
+  "desc_en": "An animated clip for HyperFab's 3D printing service: an engineering student finds a gripper model online, sends just the link, and receives the real part.",
+  "aparat": "rbthfo9",
+  "poster": "v-hyperfab-gripper.jpg",
+  "vertical": true
+ }
 ];

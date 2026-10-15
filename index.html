@@ -91,6 +91,7 @@
   .lang-sw{border:1px solid rgba(255,255,255,.22); border-radius:999px!important; padding:5px 12px!important; font-size:13px!important; font-weight:700!important;}
   .nav-phone{display:flex!important; align-items:center; justify-content:center; width:36px; height:36px; padding:0!important; border:1px solid rgba(255,255,255,.22); border-radius:50%!important;}
   .nav-phone:hover{border-color:var(--acc); color:var(--acc)!important;}
+  .nav-cta-m{display:none;}
 
   /* ===== هیرو ===== */
   .hero{background:radial-gradient(90% 120% at 15% 0%,#262A31 0%,var(--bg) 60%); border-bottom:1px solid var(--line);}
@@ -257,7 +258,8 @@
     nav .wrap{flex-wrap:wrap; gap:8px 12px;}
     .menu{order:3; width:100%; overflow-x:auto; scrollbar-width:none; margin:0 -6px; padding-bottom:2px;}
     .menu::-webkit-scrollbar{display:none;}
-    .menu .nav-cta{margin-inline-start:auto;}
+    .menu .nav-cta{display:none;}
+    .nav-cta-m{display:block; background:var(--acc); color:var(--on-acc); font-weight:700; font-size:14px; padding:7px 14px; border-radius:9px; white-space:nowrap;}
     .nav-phone{display:none!important;}
     .fab-phone{display:flex; align-items:center; justify-content:center; position:fixed; bottom:calc(18px + env(safe-area-inset-bottom,0px)); left:calc(18px + env(safe-area-inset-left,0px)); width:56px; height:56px; border-radius:50%; background:var(--acc); color:var(--on-acc); box-shadow:0 10px 24px -8px rgba(0,0,0,.7); z-index:90;}
     .fab-phone svg{width:24px; height:24px;}
@@ -286,6 +288,7 @@
 
 <nav><div class="wrap">
   <a href="#top" class="brand" aria-label="ابتدا گروپ"><span class="mark"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z"/></svg></span>ابتدا<small>گروپ</small></a>
+  <a href="#contact" class="nav-cta-m" data-cta="request" data-place="menu">درخواست پروژه</a>
   <div class="menu">
     <a href="#services">خدمات</a>
     <a href="#process">روند کار</a>
