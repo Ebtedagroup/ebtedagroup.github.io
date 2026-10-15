@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<!-- Google Analytics 4: put the Measurement ID in GA_ID. While it is empty, nothing is loaded or sent. -->
+<script>
+  var GA_ID = '';
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  if(GA_ID){
+    var gs = document.createElement('script'); gs.async = true; gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(gs);
+    gtag('js', new Date()); gtag('config', GA_ID);
+  }
+  /* Page views, scrolls, outbound links and form interactions are recorded by Google's Enhanced measurement */
+  window.track = function(name, params){ try{ if(GA_ID) gtag('event', name, params || {}); }catch(e){} };
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a,button'); if(!a) return;
+    var d = a.dataset || {};
+    if(d.cta) return track('cta_click', {label: d.cta, place: d.place || ''});
+    if(d.svc) return track('package_click', {label: d.svc});
+    if(d.contact) return track('contact_click', {label: d.contact});
+    var href = a.getAttribute('href') || '';
+    if(a.classList.contains('lang-sw')) track('lang_switch', {label: href});
+    else if(href.charAt(0) === '#' && href.length > 1) track('nav_click', {label: href.slice(1), place: a.closest('.menu') ? 'menu' : 'page'});
+  }, true);
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ebtedagroup | Motion Graphics, AI Animation and Website Upgrades</title>
+<meta name="description" content="Ebtedagroup makes motion graphics videos, AI-made animated clips for ads, stories and reels, and upgrades existing websites. With you from the very start.">
+<meta name="theme-color" content="#15171B">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="canonical" href="https://ebtedagroup.github.io/en.html">
+<link rel="alternate" hreflang="fa" href="https://ebtedagroup.github.io/">
+<link rel="alternate" hreflang="en" href="https://ebtedagroup.github.io/en.html">
+<link rel="alternate" hreflang="x-default" href="https://ebtedagroup.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ebtedagroup">
+<meta property="og:title" content="Ebtedagroup | With you from the very start">
+<meta property="og:description" content="Motion graphics videos, AI animation for ads, stories and reels, and website upgrades.">
+<meta property="og:url" content="https://ebtedagroup.github.io/en.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta property="og:image" content="https://ebtedagroup.github.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Ebtedagroup", "alternateName": "ابتدا گروپ", "url": "https://ebtedagroup.github.io/", "logo": "https://ebtedagroup.github.io/logo.png", "slogan": "With you from the very start", "description": "Motion graphics videos, AI-made animated clips and website upgrades.", "email": "Nasiri2752@Gmail.com", "telephone": "+989368047725", "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "telephone": "+989368047725", "email": "Nasiri2752@Gmail.com", "availableLanguage": ["fa", "en"]}, "sameAs": ["https://www.instagram.com/Nasiri_2752/", "https://t.me/Hnkh94"], "knowsAbout": ["Motion graphics", "AI animation", "Promotional teasers", "Instagram stories and reels", "Website upgrades"]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* "Timeline" theme: a dark page like a video editor, with track colours as accents */
+  :root{
+    --bg:#1A1C21; --bg2:#1F2228; --panel:#23262D; --panel2:#2A2E36; --line:#30343C; --nav:#15171B; --deep:#131519;
+    --fg:#ECEDEF; --muted:#A3A8B2; --dim:#7F8590;
+    --acc:#F5B82E; --acc-h:#FFC94D; --on-acc:#1A1404;
+    --teal:#7FD3C6; --violet:#B39DF2;
+    --ok:#7EE0A8; --err:#FF9B8A;
+    --font:'Vazirmatn',Tahoma,system-ui,sans-serif;
+    --r:16px;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
+  section[id], header[id]{scroll-margin-top:78px;}
+  body{font-family:var(--font); background:var(--bg); color:var(--fg); line-height:1.85; font-size:16px;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  button{font-family:inherit;}
+  :focus-visible{outline:2px solid var(--acc); outline-offset:3px; border-radius:6px;}
+  .wrap{max-width:1120px; margin:0 auto; padding-left:max(20px,env(safe-area-inset-left,0px)); padding-right:max(20px,env(safe-area-inset-right,0px));}
+  .ltr{direction:ltr; unicode-bidi:isolate;}
+
+  /* ===== نوار بالا ===== */
+  nav{position:sticky; top:0; z-index:60; background:rgba(21,23,27,.94); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:12px; padding-bottom:12px;}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:900; font-size:19px; white-space:nowrap;}
+  .mark{width:34px; height:34px; border-radius:10px; background:var(--acc); display:grid; place-items:center; flex-shrink:0;}
+  .mark svg{width:14px; height:14px; fill:var(--on-acc); margin-left:2px;}
+  .brand small{margin-left:1px;}
+  .brand small{font-weight:500; font-size:15px; color:var(--muted);}
+  .menu{display:flex; align-items:center; gap:4px;}
+  .menu a{color:#C9CDD2; font-size:14px; padding:7px 12px; border-radius:9px; transition:.2s; font-weight:500; white-space:nowrap;}
+  .menu a:hover{color:#fff; background:rgba(255,255,255,.07);}
+  .menu a.active:not(.nav-cta){color:var(--acc);}
+  .menu .nav-cta{background:var(--acc); color:var(--on-acc); font-weight:700; margin-inline-start:6px;}
+  .menu .nav-cta:hover{background:var(--acc-h); color:var(--on-acc);}
+  .lang-sw{border:1px solid rgba(255,255,255,.22); border-radius:999px!important; padding:5px 12px!important; font-size:13px!important; font-weight:700!important;}
+  .nav-phone{display:flex!important; align-items:center; justify-content:center; width:36px; height:36px; padding:0!important; border:1px solid rgba(255,255,255,.22); border-radius:50%!important;}
+  .nav-phone:hover{border-color:var(--acc); color:var(--acc)!important;}
+
+  /* ===== هیرو ===== */
+  .hero{background:radial-gradient(90% 120% at 15% 0%,#262A31 0%,var(--bg) 60%); border-bottom:1px solid var(--line);}
+  .hero .wrap{display:grid; grid-template-columns:1fr 1.05fr; gap:48px; align-items:center; padding-top:64px; padding-bottom:72px;}
+  .eyebrow{display:flex; flex-wrap:wrap; gap:6px 14px; font-size:13.5px; font-weight:700; color:var(--teal); margin-bottom:14px;}
+  .eyebrow span{display:flex; align-items:center; gap:6px;}
+  .eyebrow span::before{content:""; width:7px; height:7px; border-radius:2px; background:currentColor; transform:rotate(45deg);}
+  .eyebrow span:nth-child(2){color:var(--violet);} .eyebrow span:nth-child(3){color:var(--acc);}
+  h1{font-size:clamp(30px,4.6vw,48px); line-height:1.45; font-weight:900; text-wrap:balance; margin-bottom:16px;}
+  h1 em{font-style:normal; color:var(--acc);}
+  .lead{font-size:17px; color:var(--muted); max-width:52ch; margin-bottom:28px;}
+  .btns{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:12px; font-weight:700; font-size:15px; transition:.2s; border:1px solid transparent; cursor:pointer;}
+  .btn-p{background:var(--acc); color:var(--on-acc);}
+  .btn-p:hover{background:var(--acc-h); transform:translateY(-2px);}
+  .btn-s{border-color:rgba(255,255,255,.24); color:var(--fg);}
+  .btn-s:hover{border-color:var(--fg); transform:translateY(-2px);}
+
+  /* پنل تدوین: نمایشگر پیش‌نمایش + تایم‌لاین */
+  .editor{background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:12px; box-shadow:0 30px 60px -30px rgba(0,0,0,.7); direction:ltr; min-width:0;}
+  .ed-bar{display:flex; align-items:center; justify-content:space-between; padding:2px 4px 10px; font-size:12px; color:var(--dim);}
+    .tc{font-variant-numeric:tabular-nums; color:var(--acc); font-weight:700; letter-spacing:.04em;}
+  .mon{position:relative; aspect-ratio:16/9; border-radius:10px; overflow:hidden; background:radial-gradient(120% 120% at 50% 30%,#2B2F38 0%,var(--deep) 75%);}
+  .sc{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; opacity:0; transition:opacity .35s; padding:16px; text-align:center;}
+  .sc.on{opacity:1;}
+  .sc .big{font-weight:900; font-size:clamp(18px,2.6vw,26px); line-height:1.4;}
+  .s1 .mark{width:64px; height:64px; border-radius:18px; transform:scale(.6) rotate(-12deg); transition:transform .7s cubic-bezier(.2,.9,.3,1.3);}
+  .s1 .mark svg{width:26px; height:26px; margin-left:4px;}
+  .s1 .big{transform:translateY(14px); opacity:0; transition:.6s .25s;}
+  .s1.on .mark{transform:none;} .s1.on .big{transform:none; opacity:1;}
+  .s2{justify-content:center;}
+  .s2 .orb{position:absolute; width:38%; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle at 35% 30%,#B9F0E7,var(--teal) 45%,#2F8A7E 100%); right:6%; top:14%; transform:translateX(25%); transition:transform 4.4s linear;}
+  .s2.on .orb{transform:translateX(-15%);}
+  .s2 .big{position:relative; align-self:flex-start; text-align:start; max-width:52%; transform:translateX(24px); opacity:0; transition:.6s .15s;}
+  .s2.on .big{transform:none; opacity:1;}
+  .lower{position:absolute; bottom:12%; left:0; background:var(--acc); color:var(--on-acc); font-weight:800; font-size:clamp(11px,1.4vw,14px); padding:5px 22px 5px 16px; border-radius:0 8px 8px 0; transform:translateX(-100%); transition:transform .5s .6s cubic-bezier(.2,.9,.3,1);}
+  .s2.on .lower{transform:none;}
+  .s3 .big{color:var(--fg); transform:scale(.9); opacity:0; transition:.5s;}
+  .s3 .pill{background:var(--violet); color:#1B1530; font-weight:800; font-size:clamp(12px,1.5vw,15px); padding:6px 18px; border-radius:99px; transform:translateY(12px); opacity:0; transition:.5s .3s;}
+  .s3.on .big{transform:none; opacity:1;} .s3.on .pill{transform:none; opacity:1;}
+
+  .tl{margin-top:12px; display:grid; grid-template-columns:30px 1fr; gap:0 8px; font-size:11px;}
+  .tl-names{display:grid; grid-template-rows:18px repeat(3,24px); gap:5px; color:var(--dim); font-weight:700; align-items:center;}
+  .tl-lanes{position:relative; display:grid; grid-template-rows:18px repeat(3,24px); gap:5px;}
+  .ruler{position:relative; border-bottom:1px solid var(--line); color:var(--dim); font-variant-numeric:tabular-nums;}
+  .ruler span{position:absolute; top:0; transform:translateX(-50%); font-size:10px;}
+  .ruler span:first-child{transform:none;} .ruler span:last-child{transform:translateX(-100%);}
+  .lane{position:relative; background:var(--deep); border-radius:6px;}
+  .clip{position:absolute; top:2px; bottom:2px; border-radius:5px; color:#15171B; font-weight:700; font-size:11px; padding:0 8px; display:flex; align-items:center; overflow:hidden; white-space:nowrap;}
+  .c-a{background:var(--acc);} .c-t{background:var(--teal);} .c-v{background:var(--violet);}
+  .wave{background:repeating-linear-gradient(90deg,rgba(21,23,27,.45) 0 2px,transparent 2px 5px),var(--violet); }
+  .ph{position:absolute; top:0; bottom:0; width:2px; background:#fff; left:0; pointer-events:none; box-shadow:0 0 0 1px rgba(0,0,0,.3);}
+  .ph::before{content:""; position:absolute; top:0; left:-5px; width:12px; height:9px; background:#fff; border-radius:2px 2px 6px 6px;}
+
+  /* ===== بخش‌ها ===== */
+  .block{padding:84px 0;}
+  .block.alt{background:var(--bg2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .sec-h{max-width:640px; margin-bottom:40px;}
+  .sec-h h2{font-size:clamp(26px,3.4vw,34px); font-weight:900; line-height:1.5; text-wrap:balance; margin-bottom:8px;}
+  .sec-h p{color:var(--muted);}
+  .js .reveal{opacity:0; transform:translateY(22px); transition:.7s cubic-bezier(.2,.7,.3,1);}
+  .js .reveal.in{opacity:1; transform:none;}
+
+  /* خدمات */
+  .svc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .svc{background:var(--panel); border:1px solid var(--line); border-radius:var(--r); padding:26px 24px 24px; display:flex; flex-direction:column; gap:12px; transition:border-color .2s;}
+  .svc:hover{border-color:#454A54;}
+  .svc .ic{width:48px; height:48px; border-radius:13px; display:grid; place-items:center; background:rgba(245,184,46,.13); color:var(--acc);}
+  .svc:nth-child(2) .ic{background:rgba(179,157,242,.15); color:var(--violet);}
+  .svc:nth-child(3) .ic{background:rgba(127,211,198,.14); color:var(--teal);}
+  .svc .ic svg{width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;}
+  .svc h3{font-size:19px; font-weight:800;}
+  .svc p{color:var(--muted); font-size:15px; line-height:1.9;}
+  .chips{display:flex; flex-wrap:wrap; gap:6px;}
+  .chips span{font-size:12.5px; color:var(--fg); background:var(--panel2); border-radius:7px; padding:2px 10px;}
+  .svc-cta{margin-top:auto; padding-top:8px; align-self:flex-start; background:none; border:1px solid rgba(255,255,255,.2); color:var(--fg); border-radius:10px; padding:9px 16px; font-weight:700; font-size:14px; cursor:pointer; transition:.2s;}
+  .svc-cta:hover{background:var(--acc); border-color:var(--acc); color:var(--on-acc);}
+  .svc-note{margin-top:22px; color:var(--dim); font-size:14px;}
+
+  /* روند کار: مراحل روی خط زمان، با نشانگر کی‌فریم */
+  .steps{list-style:none; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative; counter-reset:st;}
+  .steps::before{content:""; position:absolute; top:13px; right:0; left:0; height:2px; background:linear-gradient(90deg,var(--acc),var(--violet),var(--teal)); opacity:.5;}
+  .steps li{position:relative; padding-top:44px; counter-increment:st;}
+  .steps li::before{content:""; position:absolute; top:5px; left:0; width:18px; height:18px; background:var(--bg); border:2px solid var(--acc); transform:rotate(45deg); border-radius:3px;}
+  .steps .n{font-size:13px; font-weight:800; color:var(--acc); display:block; margin-bottom:2px;}
+  .steps h3{font-size:18px; font-weight:800; margin-bottom:6px;}
+  .steps p{color:var(--muted); font-size:15px;}
+
+  /* نمونه‌کارها */
+  .pf-filter{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:26px;}
+  .pf-filter button{background:var(--panel); border:1px solid var(--line); color:var(--muted); border-radius:99px; padding:6px 16px; font-size:14px; font-weight:700; cursor:pointer; transition:.2s;}
+  .pf-filter button:hover{color:var(--fg);}
+  .pf-filter button.on{background:var(--acc); border-color:var(--acc); color:var(--on-acc);}
+  .m-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; align-items:start;}
+  .m-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:flex; flex-direction:column;}
+  .m-vid{position:relative; aspect-ratio:16/9; background:var(--deep);}
+  .m-vid.v{aspect-ratio:9/16; width:min(100%,340px); margin:0 auto;}
+  .m-vid iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+  .m-play{position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; cursor:pointer; background:var(--deep); display:block;}
+  .m-play img{width:100%; height:100%; object-fit:cover; transition:.25s;}
+  .m-play:hover img{filter:brightness(.82);}
+  .m-pbtn{position:absolute; top:50%; left:50%; width:60px; height:60px; margin:-30px 0 0 -30px; border-radius:50%; background:var(--acc); box-shadow:0 8px 24px -6px rgba(0,0,0,.6);}
+  .m-pbtn::after{content:""; position:absolute; top:50%; left:54%; transform:translate(-50%,-50%); border-style:solid; border-width:10px 0 10px 16px; border-color:transparent transparent transparent var(--on-acc);}
+  .m-ext{position:absolute; bottom:10px; inset-inline-end:10px; background:rgba(19,21,25,.86); color:#fff; font-size:12.5px; font-weight:700; padding:5px 11px; border-radius:8px;}
+  .ba{display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--deep);}
+  .ba button{position:relative; padding:0; border:0; cursor:zoom-in; background:var(--deep); aspect-ratio:4/3; overflow:hidden;}
+  .ba img{width:100%; height:100%; object-fit:cover; object-position:top;}
+  .ba span{position:absolute; top:8px; inset-inline-start:8px; font-size:12px; font-weight:800; padding:2px 10px; border-radius:6px; background:rgba(19,21,25,.86); color:#fff;}
+  .ba button:last-child span{background:var(--acc); color:var(--on-acc);}
+  .m-bd{padding:16px 20px 20px;}
+  .m-bd h3{font-size:17px; line-height:1.7; margin-bottom:4px;}
+  .m-meta{font-size:13px; color:var(--dim);}
+  .m-desc{font-size:14.5px; color:var(--muted); line-height:1.9; margin-top:8px;}
+  .m-res{margin-top:10px; font-size:13.5px; font-weight:700; color:var(--teal);}
+  .m-gal{margin-top:14px;}
+  .m-gal-h{font-size:13px; font-weight:700; color:var(--dim); margin-bottom:8px;}
+  .m-gal-g{display:grid; grid-template-columns:repeat(5,1fr); gap:6px;}
+  .m-gal-g button{padding:0; border:0; border-radius:8px; overflow:hidden; cursor:pointer; aspect-ratio:1; background:var(--deep);}
+  .m-gal-g img{width:100%; height:100%; object-fit:cover; transition:.2s;}
+  .m-gal-g button:hover img{filter:brightness(.8);}
+  .m-lb{position:fixed; inset:0; z-index:210; background:rgba(12,13,16,.94); display:none; align-items:center; justify-content:center; padding:56px 64px;}
+  .m-lb.show{display:flex;}
+  .m-lb img{max-width:100%; max-height:100%; object-fit:contain; border-radius:8px;}
+  .m-lb button{position:absolute; border:0; background:rgba(255,255,255,.12); color:#fff; cursor:pointer; border-radius:50%; width:46px; height:46px; font-size:26px; line-height:46px; padding:0;}
+  .m-lb button:hover{background:rgba(255,255,255,.24);}
+  .m-lb .lb-x{top:14px; inset-inline-end:14px;}
+  .m-lb .lb-p{top:50%; margin-top:-23px; inset-inline-start:10px;}
+  .m-lb .lb-n{top:50%; margin-top:-23px; inset-inline-end:10px;}
+  .m-lb .lb-c{position:absolute; bottom:16px; left:0; right:0; text-align:center; color:#fff; font-size:13px; opacity:.85;}
+
+  /* تماس */
+  .contact .wrap{display:grid; grid-template-columns:1.15fr 1fr; gap:48px; align-items:start;}
+  .cform{display:flex; flex-direction:column; gap:12px;}
+  .cf-row{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .cform label{display:flex; flex-direction:column; gap:6px; font-size:13.5px; font-weight:700; color:var(--muted);}
+  .cform input, .cform textarea{width:100%; padding:12px 15px; border-radius:11px; border:1px solid var(--line); background:var(--panel); color:var(--fg); font-family:inherit; font-size:15px; outline:none; transition:.2s;}
+  .cform input::placeholder, .cform textarea::placeholder{color:var(--dim);}
+  .cform input:focus, .cform textarea:focus{border-color:var(--acc);}
+  .cform textarea{resize:vertical; min-height:130px;}
+  .cform input[type=email]{direction:ltr;}
+  .cf-btn{padding:14px; border:none; border-radius:11px; background:var(--acc); color:var(--on-acc); font-weight:800; font-size:15px; cursor:pointer; transition:.2s;}
+  .cf-btn:hover{background:var(--acc-h);}
+  .cf-btn:disabled{opacity:.6; cursor:default;}
+  .cf-status{font-size:14px; min-height:22px;}
+  .cf-status.ok{color:var(--ok);} .cf-status.err{color:var(--err);}
+  .c-side h3{font-size:16px; font-weight:800; margin-bottom:12px;}
+  .c-links{display:flex; flex-direction:column; gap:8px;}
+  .c-links a{display:flex; align-items:center; gap:12px; background:var(--panel); border:1px solid var(--line); padding:11px 16px; border-radius:12px; transition:.2s;}
+  .c-links a:hover{border-color:var(--acc);}
+  .c-links svg{width:20px; height:20px; flex-shrink:0; fill:none; stroke:var(--acc); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;}
+  .c-links b{font-size:14.5px; font-weight:700;}
+  .c-links span{margin-inline-start:auto; color:var(--muted); font-size:14px; direction:ltr; unicode-bidi:isolate;}
+
+  footer{background:var(--nav); color:var(--dim); text-align:center; padding:26px 20px calc(26px + env(safe-area-inset-bottom,0px)); font-size:13px; border-top:1px solid var(--line);}
+  .fab-phone{display:none;}
+
+  @media(max-width:960px){
+    .hero .wrap{grid-template-columns:1fr; gap:36px; padding-top:40px; padding-bottom:52px;}
+    .svc-grid{grid-template-columns:1fr; max-width:560px;}
+    .contact .wrap{grid-template-columns:1fr; gap:36px;}
+  }
+  @media(max-width:860px){
+    nav .wrap{flex-wrap:wrap; gap:8px 12px;}
+    .menu{order:3; width:100%; overflow-x:auto; scrollbar-width:none; margin:0 -6px; padding-bottom:2px;}
+    .menu::-webkit-scrollbar{display:none;}
+    .menu .nav-cta{margin-inline-start:auto;}
+    .nav-phone{display:none!important;}
+    .fab-phone{display:flex; align-items:center; justify-content:center; position:fixed; bottom:calc(18px + env(safe-area-inset-bottom,0px)); right:calc(18px + env(safe-area-inset-right,0px)); width:56px; height:56px; border-radius:50%; background:var(--acc); color:var(--on-acc); box-shadow:0 10px 24px -8px rgba(0,0,0,.7); z-index:90;}
+    .fab-phone svg{width:24px; height:24px;}
+    .steps{grid-template-columns:1fr; gap:22px;}
+    .steps::before{top:0; bottom:0; left:8px; right:auto; width:2px; height:auto; background:linear-gradient(180deg,var(--teal),var(--violet),var(--acc));}
+    .steps li{padding-top:0; padding-inline-start:40px;}
+    .steps li::before{top:6px;}
+    .block{padding:64px 0;}
+  }
+  @media(max-width:560px){
+    .cf-row{grid-template-columns:1fr;}
+    .m-lb{padding:56px 8px;} .m-lb .lb-p,.m-lb .lb-n{top:auto; bottom:6px; margin-top:0;}
+    .tl{grid-template-columns:24px 1fr;}
+    .clip{font-size:10px; padding:0 5px;}
+    .m-gal-g{grid-template-columns:repeat(4,1fr);}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{transition:none!important; animation:none!important;}
+    .js .reveal{opacity:1; transform:none;}
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#top" class="brand" aria-label="Ebtedagroup"><span class="mark"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z"/></svg></span><span>Ebteda<small>group</small></span></a>
+  <div class="menu">
+    <a href="#services">Services</a>
+    <a href="#process">How we work</a>
+    <a href="#portfolio" hidden>Portfolio</a>
+    <a href="./" class="lang-sw" hreflang="fa" lang="fa">فارسی</a>
+    <a href="#contact" class="nav-cta" data-cta="request" data-place="menu">Start a project</a>
+    <a href="tel:+989368047725" class="nav-phone" aria-label="Call us" data-contact="phone"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <div class="eyebrow"><span>Motion graphics</span><span>AI animation</span><span>Website upgrades</span></div>
+    <h1>With you from the <em>very start</em></h1>
+    <p class="lead">We take on your business's promotional videos from the beginning. Send us your information and goals; we handle the script, design and production, and you receive a video file ready to publish.</p>
+    <div class="btns">
+      <a href="#contact" class="btn btn-p" data-cta="request" data-place="hero">Start a project</a>
+      <a href="#services" class="btn btn-s">Our services</a>
+    </div>
+  </div>
+
+  <div class="editor" id="editor" aria-hidden="true">
+    <div class="ed-bar"><span class="tc">00:00:00:00</span><span class="lbl">Preview</span></div>
+    <div class="mon">
+      <div class="sc s1"><span class="mark"><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></span><span class="big">Your brand</span></div>
+      <div class="sc s2"><span class="orb"></span><span class="big">Your new product, in seconds</span><span class="lower">Product intro</span></div>
+      <div class="sc s3"><span class="big">Order today</span><span class="pill">Call us</span></div>
+    </div>
+    <div class="tl">
+      <div class="tl-names"><span></span><span>V2</span><span>V1</span><span>A1</span></div>
+      <div class="tl-lanes">
+        <div class="ruler"><span style="left:0">00:00</span><span style="left:25%">00:03</span><span style="left:50%">00:06</span><span style="left:75%">00:09</span><span style="left:100%">00:12</span></div>
+        <div class="lane"><span class="clip c-t" style="left:5%;width:21.7%">Kinetic text</span><span class="clip c-t" style="left:35%;width:31.7%">AI character</span><span class="clip c-t" style="left:73.3%;width:23.4%">Captions</span></div>
+        <div class="lane"><span class="clip c-a" style="left:0;width:29.6%">Intro</span><span class="clip c-a" style="left:30%;width:39.6%">Product</span><span class="clip c-a" style="left:70%;width:30%">Call to action</span></div>
+        <div class="lane"><span class="clip c-v wave" style="left:0;width:100%">Music</span></div>
+        <i class="ph"></i>
+      </div>
+    </div>
+  </div>
+</div></header>
+
+<section class="block" id="services"><div class="wrap">
+  <div class="sec-h reveal">
+    <h2>Services</h2>
+    <p>We collect everything we need from you and deliver the finished video file.</p>
+  </div>
+  <div class="svc-grid">
+    <article class="svc reveal">
+      <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></span>
+      <h3>Motion graphics</h3>
+      <p>Promotional teasers, product and service explainers, logo animations, and Instagram stories and reels.</p>
+      <div class="chips"><span>Landscape 16:9</span><span>Vertical 9:16</span></div>
+      <button type="button" class="svc-cta" data-svc="motion" data-name="Motion graphics">Get a quote →</button>
+    </article>
+    <article class="svc reveal">
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4z"/><path d="M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span>
+      <h3>AI animation</h3>
+      <p>Animated clips with characters and scenes made with AI, for ads, stories and reels.</p>
+      <div class="chips"><span>Stories</span><span>Reels</span><span>Ads</span></div>
+      <button type="button" class="svc-cta" data-svc="ai-animation" data-name="AI animation">Get a quote →</button>
+    </article>
+    <article class="svc reveal">
+      <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 16a4 4 0 0 1 8 0"/><path d="M12 16l2.2-2.2"/></svg></span>
+      <h3>Website upgrades</h3>
+      <p>A refreshed look for your current website, faster loading and a better experience on mobile.</p>
+      <div class="chips"><span>Design</span><span>Speed</span><span>Mobile</span></div>
+      <button type="button" class="svc-cta" data-svc="website" data-name="Website upgrades">Get a quote →</button>
+    </article>
+  </div>
+  <p class="svc-note reveal">The cost of each project depends on the type, length and complexity of the work. Send us a request for a quote.</p>
+</div></section>
+
+<section class="block alt" id="process"><div class="wrap">
+  <div class="sec-h reveal">
+    <h2>How we work</h2>
+    <p>Four steps from your first message to the final file.</p>
+  </div>
+  <ol class="steps">
+    <li class="reveal"><span class="n">Step 1</span><h3>Send your information</h3><p>You send us your goal, audience and business materials, such as your logo, photos and text.</p></li>
+    <li class="reveal"><span class="n">Step 2</span><h3>Script and first draft</h3><p>We prepare the script and a first draft and agree on them with you before production.</p></li>
+    <li class="reveal"><span class="n">Step 3</span><h3>Production</h3><p>We make the video with motion graphics or AI animation.</p></li>
+    <li class="reveal"><span class="n">Step 4</span><h3>Delivery</h3><p>You receive the final video file sized for where it will be published, such as stories, reels or your website.</p></li>
+  </ol>
+</div></section>
+
+<section class="block" id="portfolio" hidden><div class="wrap">
+  <div class="sec-h reveal">
+    <h2>Portfolio</h2>
+    <p>A selection of our work.</p>
+  </div>
+  <div class="pf-filter" id="pf-filter" hidden></div>
+  <div class="m-grid" id="m-grid"></div>
+</div></section>
+
+<section class="block alt contact" id="contact"><div class="wrap">
+  <div>
+    <div class="sec-h reveal">
+      <h2>Start a project</h2>
+      <p>For a quote or to start working together, fill in the form below or reach us through the other contact options.</p>
+    </div>
+    <form class="cform reveal" id="contactForm" action="https://formspree.io/f/mrevzvga" method="POST">
+      <input type="hidden" name="_subject" value="Message from the Ebtedagroup website">
+      <input type="hidden" name="service" id="cf-service" value="">
+      <div class="cf-row">
+        <label for="cf-name">Your name<input type="text" id="cf-name" name="name" autocomplete="name" required></label>
+        <label for="cf-email">Your email<input type="email" id="cf-email" name="email" autocomplete="email" required></label>
+      </div>
+      <label for="cf-msg">Your message<textarea id="cf-msg" name="message" rows="5" placeholder="Tell us about your business and the video you need…" required></textarea></label>
+      <button type="submit" class="cf-btn">Send message</button>
+      <div class="cf-status" id="cfStatus" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+  <div class="c-side reveal">
+    <h3>Other ways to reach us</h3>
+    <div class="c-links">
+      <a href="tel:+989368047725" data-contact="phone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><b>Phone</b><span>+98 936 804 7725</span></a>
+      <a href="https://wa.me/989368047725" target="_blank" rel="noopener" data-contact="whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.5-4.7a8.5 8.5 0 1 1 16-4.2z"/><path d="M9 8.6c0 3.4 2.9 6.4 6.4 6.4l.9-1.5-1.9-.9-.8.7a4.7 4.7 0 0 1-2.4-2.4l.7-.8-.9-1.9z"/></svg><b>WhatsApp</b><span>+98 936 804 7725</span></a>
+      <a href="https://t.me/Hnkh94" target="_blank" rel="noopener" data-contact="telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.5L2.5 11.5l6.5 2.2 2.3 6.8 3.5-4.2 5 3.7z"/><path d="M9 13.7l12.5-9.2"/></svg><b>Telegram</b><span>@Hnkh94</span></a>
+      <a href="https://ble.ir/hnkh94" target="_blank" rel="noopener" data-contact="bale"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg><b>Bale</b><span>@hnkh94</span></a>
+      <a href="https://www.instagram.com/Nasiri_2752/" target="_blank" rel="noopener" data-contact="instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg><b>Instagram</b><span>@Nasiri_2752</span></a>
+      <a href="mailto:Nasiri2752@Gmail.com" data-contact="email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg><b>Email</b><span>Nasiri2752@Gmail.com</span></a>
+    </div>
+  </div>
+</div></section>
+
+<footer>© <span id="yr"></span> Ebtedagroup · With you from the very start</footer>
+
+<a href="tel:+989368047725" class="fab-phone" aria-label="Call us" data-contact="phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+
+<script>
+(function(){
+  var L = document.documentElement.lang.slice(0,2) === 'en' ? 'en' : 'fa';
+  var T = {
+    fa: {sending:'در حال ارسال…', ok:'پیام شما ارسال شد. به‌زودی با شما تماس می‌گیریم.', fail:'ارسال انجام نشد. لطفاً دوباره تلاش کنید یا از راه‌های ارتباطی دیگر استفاده کنید.', net:'ارسال انجام نشد. اتصال اینترنت را بررسی کنید.', req:'درخواست: '},
+    en: {sending:'Sending…', ok:'Your message has been sent. We will get back to you soon.', fail:'Sending failed. Please try again or use one of the other contact options.', net:'Sending failed. Please check your internet connection.', req:'Request: '}
+  }[L];
+  var yr = document.getElementById('yr');
+  if(yr) yr.textContent = L === 'en' ? new Date().getFullYear() : new Date().toLocaleDateString('fa-IR', {year:'numeric'});
+
+  /* Smooth scroll به بخش‌ها با در نظر گرفتن ارتفاع منو */
+  var navEl = document.querySelector('nav');
+  function go(id){
+    var t = document.getElementById(id); if(!t || t.hidden) return false;
+    window.scrollTo({top: t.getBoundingClientRect().top + window.pageYOffset - navEl.offsetHeight - 8, behavior: 'smooth'});
+    return true;
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){ if(go(a.getAttribute('href').slice(1))) e.preventDefault(); });
+  });
+
+  /* منوی فعال هنگام اسکرول */
+  var spyLinks = [].slice.call(document.querySelectorAll('.menu a[href^="#"]:not(.nav-cta)'));
+  function spy(){
+    var cur = null, y = window.scrollY + navEl.offsetHeight + 40;
+    spyLinks.forEach(function(a){ var s = document.getElementById(a.getAttribute('href').slice(1)); if(s && !s.hidden && s.offsetTop <= y) cur = a; });
+    spyLinks.forEach(function(a){ a.classList.toggle('active', a === cur); });
+  }
+  window.addEventListener('scroll', spy, {passive:true}); spy();
+
+  /* نمایش تدریجی بخش‌ها */
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(function(el, i){ el.style.transitionDelay = (i % 3 * 0.08) + 's'; io.observe(el); });
+  } else document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+
+  /* دکمه‌ی «استعلام قیمت» هر خدمت: نام خدمت در فرم ثبت می‌شود */
+  var cform = document.getElementById('contactForm'), svcIn = document.getElementById('cf-service'), msg = document.getElementById('cf-msg');
+  document.querySelectorAll('.svc-cta').forEach(function(b){
+    b.addEventListener('click', function(){
+      svcIn.value = b.dataset.name; cform.dataset.svc = b.dataset.svc;
+      var line = T.req + b.dataset.name;
+      if(!msg.value.trim() || msg.value.indexOf(T.req) === 0) msg.value = line + '\n';
+      go('contact');
+      setTimeout(function(){ document.getElementById('cf-name').focus({preventScroll:true}); }, 600);
+    });
+  });
+
+  /* ارسال فرم با Formspree، بدون رفرش صفحه */
+  cform.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var status = document.getElementById('cfStatus'), btn = cform.querySelector('.cf-btn'), old = btn.textContent;
+    status.textContent = ''; status.className = 'cf-status';
+    btn.disabled = true; btn.textContent = T.sending;
+    try{
+      var res = await fetch(cform.action, {method:'POST', body:new FormData(cform), headers:{'Accept':'application/json'}});
+      if(res.ok){
+        track('lead_form_sent', {label: cform.dataset.svc || 'general'});
+        cform.reset(); delete cform.dataset.svc;
+        status.textContent = T.ok; status.className = 'cf-status ok';
+      } else { status.textContent = T.fail; status.className = 'cf-status err'; }
+    }catch(err){ status.textContent = T.net; status.className = 'cf-status err'; }
+    finally{ btn.disabled = false; btn.textContent = old; }
+  });
+
+  /* پنل تدوین هیرو: نشانگر پخش روی تایم‌لاین حرکت می‌کند و صحنه‌ی نمایشگر با آن عوض می‌شود */
+  var ed = document.getElementById('editor');
+  if(ed){
+    var D = 12, cuts = [3.6, 8.4], scs = ed.querySelectorAll('.sc'), ph = ed.querySelector('.ph'), tc = ed.querySelector('.tc');
+    var pad = function(n){ return (n < 10 ? '0' : '') + n; };
+    var frame = function(t){
+      ph.style.left = (t / D * 100) + '%';
+      var k = t < cuts[0] ? 0 : t < cuts[1] ? 1 : 2;
+      for(var j = 0; j < scs.length; j++) scs[j].classList.toggle('on', j === k);
+      var s = Math.floor(t); tc.textContent = '00:00:' + pad(s) + ':' + pad(Math.floor((t - s) * 25));
+    };
+    if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches){ frame(5.2); }
+    else{
+      var t = 0, last = null, vis = true;
+      if('IntersectionObserver' in window) new IntersectionObserver(function(es){ vis = es[0].isIntersecting; }).observe(ed);
+      var loop = function(ts){
+        if(last !== null && vis && !document.hidden) t = (t + Math.min(ts - last, 100) / 1000) % D;
+        last = ts; frame(t); requestAnimationFrame(loop);
+      };
+      requestAnimationFrame(loop);
+    }
+  }
+})();
+</script>
+
+<script src="portfolio.js"></script>
+<script>
+/* نمونه‌کارها: از portfolio.js خوانده می‌شوند؛ اگر فهرست خالی باشد، این بخش و لینک منو نمایش داده نمی‌شوند */
+(function(){
+  var L = document.documentElement.lang.slice(0,2) === 'en' ? 'en' : 'fa';
+  var CATS = {
+    motion: {fa:'موشن‌گرافیک', en:'Motion graphics'},
+    ai:     {fa:'انیمیشن با هوش مصنوعی', en:'AI animation'},
+    reels:  {fa:'استوری و ریلز', en:'Stories & Reels'},
+    web:    {fa:'ارتقای سایت', en:'Website upgrades'}
+  };
+  var P = (window.PORTFOLIO || []).filter(function(p){ return p && p.slug && (p.aparat || p.tw || p.url || (p.before && p.after)); });
+  if(!P.length) return;
+  var sec = document.getElementById('portfolio'), g = document.getElementById('m-grid');
+  sec.hidden = false;
+  var ml = document.querySelector('.menu a[href="#portfolio"]'); if(ml) ml.hidden = false;
+
+  function t(p, k){ return p[k + '_' + L] || p[k + '_fa'] || p[k + '_en'] || ''; }
+  function q(s){ return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+  function fmt(n){ return L === 'en' ? String(n) : String(n).replace(/\d/g, function(d){ return '۰۱۲۳۴۵۶۷۸۹'[d]; }); }
+  function cat(c){ return CATS[c] ? CATS[c][L] : c; }
+  function src(p){ return 'https://www.aparat.com/video/video/embed/videohash/' + encodeURIComponent(p.aparat) + '/vt/frame'; }
+
+  /* گالری تمام‌صفحه */
+  var lb, lbL = [], lbI = 0;
+  function lbShow(i){
+    lbI = (i + lbL.length) % lbL.length; var it = lbL[lbI];
+    var im = lb.querySelector('img'); im.src = it.src; im.alt = it.cap || '';
+    lb.querySelector('.lb-c').textContent = (it.cap ? it.cap + ' · ' : '') + fmt(lbI + 1) + ' / ' + fmt(lbL.length);
+  }
+  function lbClose(){ lb.classList.remove('show'); document.body.style.overflow = ''; }
+  function lbOpen(list, i, slug){
+    if(!lb){
+      lb = document.createElement('div'); lb.className = 'm-lb'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-modal','true');
+      lb.innerHTML = '<img alt=""><button type="button" class="lb-x" aria-label="' + (L === 'en' ? 'Close' : 'بستن') + '">×</button>'
+        + '<button type="button" class="lb-p" aria-label="' + (L === 'en' ? 'Previous' : 'قبلی') + '">' + (L === 'en' ? '‹' : '›') + '</button>'
+        + '<button type="button" class="lb-n" aria-label="' + (L === 'en' ? 'Next' : 'بعدی') + '">' + (L === 'en' ? '›' : '‹') + '</button><div class="lb-c"></div>';
+      lb.onclick = function(e){ if(e.target === lb) lbClose(); };
+      lb.querySelector('.lb-x').onclick = lbClose;
+      lb.querySelector('.lb-p').onclick = function(){ lbShow(lbI - 1); };
+      lb.querySelector('.lb-n').onclick = function(){ lbShow(lbI + 1); };
+      document.addEventListener('keydown', function(e){
+        if(!lb.classList.contains('show')) return;
+        if(e.key === 'Escape') lbClose();
+        else if(e.key === 'ArrowRight') lbShow(lbI + (L === 'en' ? 1 : -1));
+        else if(e.key === 'ArrowLeft') lbShow(lbI + (L === 'en' ? -1 : 1));
+      });
+      document.body.appendChild(lb);
+    }
+    track('gallery_open', {label: slug});
+    lbL = list; lbShow(i); lb.classList.add('show'); document.body.style.overflow = 'hidden'; lb.querySelector('.lb-x').focus();
+  }
+  function thumb(s){ return s.replace(/\.(\w+)$/, '-t.$1'); }
+
+  var ld = [];
+  P.forEach(function(p){
+    var el = document.createElement('article'); el.className = 'm-card'; el.dataset.cat = p.cat || '';
+    var title = t(p, 'title'), media = '';
+    if(p.before && p.after){
+      media = '<div class="ba">'
+        + '<button type="button" aria-label="' + q((L === 'en' ? 'Before: ' : 'قبل: ') + title) + '"><img src="' + thumb(p.before) + '" alt="" loading="lazy"><span>' + (L === 'en' ? 'Before' : 'قبل') + '</span></button>'
+        + '<button type="button" aria-label="' + q((L === 'en' ? 'After: ' : 'بعد: ') + title) + '"><img src="' + thumb(p.after) + '" alt="" loading="lazy"><span>' + (L === 'en' ? 'After' : 'بعد') + '</span></button></div>';
+    } else if(p.aparat){
+      media = '<div class="m-vid' + (p.vertical ? ' v' : '') + '">' + (p.poster
+        ? '<button type="button" class="m-play" aria-label="' + q((L === 'en' ? 'Play: ' : 'پخش: ') + title) + '"><img src="' + p.poster + '" alt="" loading="lazy"><span class="m-pbtn"></span></button>'
+        : '<iframe src="' + src(p) + '" title="' + q(title) + '" allowfullscreen loading="lazy"></iframe>') + '</div>';
+    } else if(p.tw || p.url){
+      /* تلوبیون اجازه‌ی نمایش داخل سایت‌های دیگر را نمی‌دهد؛ پس کارت به صفحه‌ی خود ویدیو لینک می‌شود */
+      var href = p.tw ? 'https://telewebion.net/episode/' + encodeURIComponent(p.tw) : p.url;
+      var lbl = p.tw ? (L === 'en' ? 'Watch on Telewebion ↗' : 'تماشا در تلوبیون ↗') : (t(p, 'cta') || (L === 'en' ? 'Watch ↗' : 'تماشا ↗'));
+      media = '<div class="m-vid' + (p.vertical ? ' v' : '') + '"><a class="m-play" href="' + q(href) + '" target="_blank" rel="noopener" aria-label="' + q(lbl + ' ' + title) + '">'
+        + (p.poster ? '<img src="' + p.poster + '" alt="" loading="lazy">' : '') + '<span class="m-pbtn"></span><span class="m-ext">' + lbl + '</span></a></div>';
+    }
+    var meta = [t(p, 'client'), p.year ? fmt(p.year) : '', cat(p.cat)].filter(Boolean).join(' · ');
+    el.innerHTML = media + '<div class="m-bd"><h3>' + title + '</h3><div class="m-meta">' + meta + '</div>'
+      + (t(p, 'desc') ? '<p class="m-desc">' + t(p, 'desc') + '</p>' : '')
+      + (t(p, 'result') ? '<p class="m-res">' + t(p, 'result') + '</p>' : '') + '</div>';
+
+    var pb = el.querySelector('button.m-play');
+    if(pb) pb.onclick = function(){
+      track('video_play', {label: p.slug, title: p.title_fa || p.title_en || '', category: p.cat || ''});
+      pb.parentNode.innerHTML = '<iframe src="' + src(p) + '" title="' + q(title) + '" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    };
+    var ab = el.querySelector('a.m-play');
+    if(ab) ab.addEventListener('click', function(){ track('video_play', {label: p.slug, title: p.title_fa || p.title_en || '', category: p.cat || ''}); });
+    if(p.before && p.after){
+      var pair = [{src: p.before, cap: L === 'en' ? 'Before' : 'قبل'}, {src: p.after, cap: L === 'en' ? 'After' : 'بعد'}];
+      el.querySelectorAll('.ba button').forEach(function(b, i){ b.onclick = function(){ lbOpen(pair, i, p.slug); }; });
+    }
+    if(p.gallery && p.gallery.length){
+      var d = document.createElement('div'); d.className = 'm-gal';
+      d.innerHTML = '<div class="m-gal-h">' + (L === 'en' ? 'Gallery' : 'گالری تصاویر') + ' (' + fmt(p.gallery.length) + ')</div><div class="m-gal-g">'
+        + p.gallery.map(function(s, i){ return '<button type="button" aria-label="' + q((L === 'en' ? 'Image ' : 'تصویر ') + fmt(i + 1)) + '"><img src="' + thumb(s) + '" alt="" loading="lazy"></button>'; }).join('') + '</div>';
+      var list = p.gallery.map(function(s){ return {src: s}; });
+      d.querySelectorAll('button').forEach(function(b, i){ b.onclick = function(){ lbOpen(list, i, p.slug); }; });
+      el.querySelector('.m-bd').appendChild(d);
+    }
+    g.appendChild(el);
+
+    if(p.aparat && p.poster && p.d) ld.push({'@type':'VideoObject', name:title, description:t(p, 'desc') || title,
+      thumbnailUrl:new URL(p.poster, location.href).href, uploadDate:p.d, embedUrl:src(p)});
+  });
+
+  /* دکمه‌های فیلتر: فقط وقتی بیش از یک نوع کار وجود دارد */
+  var cats = []; P.forEach(function(p){ if(p.cat && cats.indexOf(p.cat) < 0) cats.push(p.cat); });
+  if(cats.length > 1){
+    var f = document.getElementById('pf-filter'); f.hidden = false;
+    f.innerHTML = '<button type="button" class="on" data-c="">' + (L === 'en' ? 'All' : 'همه') + '</button>'
+      + cats.map(function(c){ return '<button type="button" data-c="' + q(c) + '">' + cat(c) + '</button>'; }).join('');
+    f.querySelectorAll('button').forEach(function(b){
+      b.onclick = function(){
+        f.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on', x === b); });
+        g.querySelectorAll('.m-card').forEach(function(c){ c.hidden = !!b.dataset.c && c.dataset.cat !== b.dataset.c; });
+        track('portfolio_filter', {label: b.dataset.c || 'all'});
+      };
+    });
+  }
+  if(ld.length){
+    var s = document.createElement('script'); s.type = 'application/ld+json';
+    s.textContent = JSON.stringify({'@context':'https://schema.org', '@graph':ld});
+    document.head.appendChild(s);
+  }
+})();
+</script>
+</body>
+</html>
