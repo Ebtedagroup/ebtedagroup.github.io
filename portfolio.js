@@ -52,5 +52,61 @@ window.PORTFOLIO = [
   "aparat": "rbthfo9",
   "poster": "v-hyperfab-gripper.jpg",
   "vertical": true
+ },
+ {
+  "slug": "hyperfab-order-guide",
+  "cat": "motion",
+  "title_fa": "آموزش سفارش پرینت سه‌بعدی",
+  "title_en": "How to order a 3D print",
+  "client_fa": "هایپرفب",
+  "client_en": "HyperFab",
+  "year": "1405",
+  "desc_fa": "کلیپ آموزشی برای هایپرفب که سفارش پرینت سه‌بعدی از سایت را در سه قدم نشان می‌دهد.",
+  "desc_en": "A tutorial clip for HyperFab showing how to order a 3D print from the website in three steps.",
+  "aparat": "efnzfq6",
+  "poster": "v-hyperfab-order-guide.jpg",
+  "vertical": true
+ },
+ {
+  "slug": "hyperfab-dragon",
+  "cat": "motion",
+  "title_fa": "اژدهای مفصلی یک‌تکه",
+  "title_en": "A one-piece articulated dragon",
+  "client_fa": "هایپرفب",
+  "client_en": "HyperFab",
+  "year": "1405",
+  "desc_fa": "کلیپی برای هایپرفب که نشان می‌دهد مفصل‌های تودرتوی این اژدها چطور یک‌تکه با پرینتر سه‌بعدی چاپ شده‌اند.",
+  "desc_en": "A clip for HyperFab showing how this dragon's interlocking joints were printed in one piece on a 3D printer.",
+  "aparat": "gqyd926",
+  "poster": "v-hyperfab-dragon.jpg",
+  "vertical": true
+ },
+ {
+  "slug": "hyperfab-print-price",
+  "cat": "motion",
+  "title_fa": "زمان، یعنی قیمت: قیمت پرینت سه‌بعدی چطور حساب می‌شود؟",
+  "title_en": "Time is price: how a 3D print is priced",
+  "client_fa": "هایپرفب",
+  "client_en": "HyperFab",
+  "year": "1405",
+  "desc_fa": "کلیپی برای هایپرفب که توضیح می‌دهد چرا زمان چاپ، قیمت پرینت سه‌بعدی را تعیین می‌کند.",
+  "desc_en": "A clip for HyperFab explaining why print time sets the price of a 3D print.",
+  "aparat": "kxxl13o",
+  "poster": "v-hyperfab-print-price.jpg",
+  "vertical": true
+ },
+ {
+  "slug": "hyperfab-dino-battle",
+  "cat": "motion",
+  "title_fa": "نبرد دایناسورها",
+  "title_en": "Dinosaur battle",
+  "client_fa": "هایپرفب",
+  "client_en": "HyperFab",
+  "year": "1405",
+  "desc_fa": "کلیپ تعاملی برای هایپرفب: سه دایناسور مفصلی پرینت‌شده رو در روی هم قرار می‌گیرند و مخاطب رنگ برنده را در کامنت می‌نویسد.",
+  "desc_en": "An interactive clip for HyperFab: three 3D-printed articulated dinosaurs face off and viewers comment the winning colour.",
+  "aparat": "knzjkwm",
+  "poster": "v-hyperfab-dino-battle.jpg",
+  "vertical": true
  }
 ];
