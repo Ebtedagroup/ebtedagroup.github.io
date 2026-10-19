@@ -40,6 +40,34 @@
 */
 window.PORTFOLIO = [
  {
+  "slug": "hyperfab-multicolor-1",
+  "cat": "motion",
+  "title_fa": "پرینت چندرنگ، قسمت ۱: راز چاپ رنگی",
+  "title_en": "Multi-colour printing, part 1: how colour printing works",
+  "client_fa": "هایپرفب",
+  "client_en": "HyperFab",
+  "year": "1405",
+  "desc_fa": "پرینترهای امروزی با فقط یک نازل تا ۱۶ رنگ چاپ می‌کنند. این کلیپ برای هایپرفب نشان می‌دهد در هر تعویض رنگ چه اتفاقی می‌افتد: فیلامنت بریده می‌شود، به جعبه‌ی CFS برمی‌گردد و رنگ جدید تا نازل می‌آید.",
+  "desc_en": "Today's printers print up to 16 colours with a single nozzle. This clip for HyperFab shows what happens at each colour change: the filament is cut, goes back to the CFS box, and the new colour feeds to the nozzle.",
+  "aparat": "dne9rlc",
+  "poster": "v-hyperfab-multicolor-1.jpg",
+  "vertical": true
+ },
+ {
+  "slug": "hyperfab-multicolor-2",
+  "cat": "motion",
+  "title_fa": "پرینت چندرنگ، قسمت ۲: راز پرتی‌ها",
+  "title_en": "Multi-colour printing, part 2: where the waste comes from",
+  "client_fa": "هایپرفب",
+  "client_en": "HyperFab",
+  "year": "1405",
+  "desc_fa": "چرا پرینت رنگی این‌قدر پرتی دارد؟ بعد از هر تعویض رنگ، پرینتر مقداری فیلامنت بیرون می‌دهد تا رنگ‌ها قاطی نشوند و نوک نازل را روی برج پرایم تمیز می‌کند؛ همین کار پرینت چندرنگ را پرتی‌تر و زمان‌برتر می‌کند.",
+  "desc_en": "Why does colour printing waste so much filament? After each colour change the printer purges filament so the colours don't mix and wipes the nozzle on a prime tower, which makes multi-colour prints more wasteful and slower.",
+  "aparat": "ghz7235",
+  "poster": "v-hyperfab-multicolor-2.jpg",
+  "vertical": true
+ },
+ {
   "slug": "hyperfab-gripper",
   "cat": "ai",
   "title_fa": "از یک عکس در گوشی تا قطعه‌ی واقعی",
