@@ -40,6 +40,20 @@
 */
 window.PORTFOLIO = [
  {
+  "slug": "hyperfab-tekeyab",
+  "cat": "motion",
+  "title_fa": "تکه‌یاب: یک تکه‌ی بیست‌سانتی، بدون خرید کل ورق",
+  "title_en": "Tekeyab: a 20 cm piece without buying the whole sheet",
+  "client_fa": "هایپرفب",
+  "client_en": "HyperFab",
+  "year": "1405",
+  "desc_fa": "کلیپی برای معرفی سرویس تکه‌یاب هایپرفب: مشخصات تکه‌ی متریال را در یک فرم چهارمرحله‌ای می‌نویسید، هایپرفب آن را پیدا می‌کند، قیمت را با پیامک یا ایمیل می‌فرستد و در صورت نیاز به اندازه می‌بُرد.",
+  "desc_en": "A clip introducing HyperFab's Tekeyab service: you describe the piece of material you need in a four-step form, and HyperFab finds it, sends the price by text or email, and cuts it to size if needed.",
+  "aparat": "poq88kr",
+  "poster": "v-hyperfab-tekeyab.jpg",
+  "vertical": true
+ },
+ {
   "slug": "hyperfab-multicolor-1",
   "cat": "motion",
   "title_fa": "پرینت چندرنگ، قسمت ۱: راز چاپ رنگی",
